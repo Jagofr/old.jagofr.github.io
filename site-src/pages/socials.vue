@@ -1,0 +1,7 @@
+<template>
+
+        <h1>This is the socials page!</h1>
+</template>
+<style>
+
+</style>
