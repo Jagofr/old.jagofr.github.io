@@ -60,6 +60,10 @@
         </span>
         <div class="header-bar__spacer"></div>
         <span class="header-bar__link">
+            <h1>Jagofr's Website!</h1>
+        </span>
+        <div class="header-bar__spacer"></div>
+        <span class="header-bar__link">
             <NuxtLink to="/blog" class="link__nuxt">Blog</NuxtLink>
         </span>
         <span class="header-bar__link">
