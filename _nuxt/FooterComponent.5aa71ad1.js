@@ -1,0 +1,1 @@
+import{o,F as e}from"./entry.eb0ea578.js";import"./FooterComponent.vue_vue_type_style_index_0_lang.7abcc8fb.js";import{_ as t}from"./_plugin-vue_export-helper.a1a6add7.js";function r(c,_){return o(),e("h1",null,"Footer")}const n={},p=t(n,[["render",r]]);export{p as default};
