@@ -1,2 +1,3 @@
 # jagofr.github.io
-README.md
+## Todo
+- [ ] Format README.md
