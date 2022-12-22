@@ -1,3 +1,4 @@
-<template>
-        <h1>This is the blog!</h1>
+<template lang="pug">
+h1 This is the blog!
+ContentDoc(path="/blog/")
 </template>

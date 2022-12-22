@@ -1,85 +1,54 @@
-<style>
-.header-bar {
-    position: sticky;
-    z-index: 99;
-    background: white;
-    top: 0;
-    display: flex;
-    width: 100%;
-}
-.header-bar * {
-    padding: 1rem;
-}
-.header-bar__spacer {
-    margin-left: auto;
-}
-.header-bar__link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-}
-.header-bar__more-links {
-    display: inline-flex;
-    max-width: min-content;
-    max-height: min-content;
-    margin-top: auto;
-    margin-bottom: auto;
-    flex-flow: column nowrap;
-}
-.header-bar__more-links_leftSpace {
-    margin-left: auto;
-    margin-right: 0;
-}
-.header-bar__more-links_rightSpace {
-    margin-right: auto;
-    margin-left: 0;
-}
-.more-links__line {
-    background: black;
-    width: 1rem;
-    height: 0.125rem;
-    padding: 0;
-}
-.more-links__line.two {
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
-}
-.link__nuxt {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
+<style lang="less">
+@import "~/assets/jCss/layout/navbar";
 </style>
 
-<template>
-    <div class="header-bar">
-        <span class="header-bar__link" style="padding: 0;">
-            <NuxtLink to="/" class="link__nuxt" style="text-decoration: none;"><h1 style="padding: 0;">I am the header! Really, I am!</h1></NuxtLink>
-        </span>
-        <div class="header-bar__spacer"></div>
-        <span class="header-bar__link">
-            <h1>Jagofr's Website!</h1>
-        </span>
-        <div class="header-bar__spacer"></div>
-        <span class="header-bar__link">
-            <NuxtLink to="/blog" class="link__nuxt">Blog</NuxtLink>
-        </span>
-        <span class="header-bar__link">
-            <NuxtLink to="/socials" class="link__nuxt">Socials</NuxtLink>
-        </span>
-        <span class="header-bar__link">
-            <NuxtLink to="/about" class="link__nuxt">About</NuxtLink>
-        </span>
-        <button class="header-bar__more-links header-bar__more-links" hidden>
-            <span class="more-links__line one"></span>
-            <span class="more-links__line two"></span>
-            <span class="more-links__line three"></span>
-        </button>
-    </div>
+<template lang="pug">
+nav.nav-bar 
+  .nav-bar__menu-btn-box
+    button.nav-bar__menu-btn 
+      span.nav-bar__menu-btn-icon
+        i.las.la-bars 
+  .nav-bar__header
+    span.nav-bar__header_text 
+      NuxtLink(to="/").nav-bar__link Jagofr
+  .nav-bar__social-links
+    span.nav-bar__links_item
+      a(href="https://github.com/Jagofr/jagofr.github.io/").nav-bar__link
+        i.lab.la-github
+    span.nav-bar__links_item
+      a(href="http://www.avato.media/").nav-bar__link
+        i.las.la-globe
+    span.nav-bar__links_item
+      a(href="https://linkedin.com/in/Jagofr").nav-bar__link
+        i.lab.la-linkedin-in 
+    span.nav-bar__links_item
+      a(href="https://wa.me/+18768309280/").nav-bar__link
+        i.fab.fa-whatsapp
+  .nav-bar__links.hidden
+    span.nav-bar__links_item 
+        NuxtLink(to="/blog").nav-bar__link Blog
+    span.nav-bar__links_item
+        NuxtLink(to="/socials").nav-bar__link Socials
+    span.nav-bar__links_item 
+        NuxtLink(to="/about").nav-bar__link About  
 </template>
 
-<script>
+<script setup>
+onMounted(() => {
+    let mobileMenuBtn = document.querySelector("button.nav-bar__menu-btn");
+    let mobileMenu = document.querySelector("div.nav-bar__links");
+    let mobileMenuItems = document.querySelectorAll(".nav-bar__link");
 
+    mobileMenuBtn.addEventListener("click", (event) => {    
+        event.preventDefault();
+        mobileMenu.classList.toggle("hidden");
+    })
+
+    mobileMenuItems.forEach((item) => {
+        item.addEventListener("click", (event) => {
+            mobileMenu.classList.toggle("hidden", true);
+        })
+    })
+
+});
 </script>

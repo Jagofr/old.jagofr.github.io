@@ -1,52 +1,53 @@
-<template>
-        <div class="body">
-            <article>
-                <h1> Hi! I'm the homepage </h1>
-                <h2> Who am I?</h2>
-                <p>
-                    Hi! My name is Gerard. You can call me Jamie if you feel more endearing. I'm a freelance, 
-                    full-stack web/mobile/app developer, who (at least right now) focuses on cross-compatible,
-                    mobile-first websites and web applications. I typically use some JavaScript stack of sorts.
-                    Currently, I'm using Nuxt.js to develop this website! But I also use PHP for my company site,
-                    <a href="https://avato.media/">AVATO Media</a>.
-                </p>
-                <h2>This site's status.</h2>
-                <p>
-                    Right now, if I haven't updated this yet,
-                    this page may look rather bare. But I'm working on it! It's a work in progress. So, you're gonna
-                    see a bunch of lorems; especially on the <NuxtLink to="/tests">Tests Page</NuxtLink>. I won't have
-                    a nav link to this page. Have fun!
-                </p>
-            </article>
-            <article>
-                <h2> Hi! I'm still the homepage </h2>
-                <h3> Here's a Really Long Lorem</h3>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam consequatur mollitia aperiam, 
-                    labore laborum sapiente dolores laboriosam molestiae qui aliquam dicta sequi dolorem! Laborum, obcaecati vitae! Maxime, voluptatum velit
-                    iure necessitatibus modi eius quasi vero? Sint consectetur, porro officiis, velit modi perferendis molestias totam numquam assumenda 
-                    voluptatibus nam explicabo sapiente facilis. Odit voluptatum, ea expedita non eum veritatis, ducimus quibusdam similique, fuga deleniti 
-                    quia sunt? Libero blanditiis ullam recusandae! Eum rerum omnis blanditiis debitis itaque dolores repellat, deleniti eligendi tempore sunt 
-                    accusamus atque temporibus nesciunt deserunt recusandae fugiat eaque. Possimus eum magnam sapiente, ad voluptatibus voluptatum minima 
-                    iusto enim illo. Quas nulla autem animi ipsa? Quisquam quos iste harum magnam alias velit, impedit illum delectus? Nostrum asperiores 
-                    odit quasi quos veritatis debitis quaerat laborum enim mollitia ad incidunt explicabo ratione iste aspernatur ab corporis, pariatur nihil 
-                    minus quibusdam maxime corrupti non labore animi! Voluptatum quo voluptate animi vitae iste qui voluptatem expedita fugiat eum itaque 
-                    totam accusantium et, rem quidem vero quae exercitationem officia, id laboriosam atque sint. At sint enim dicta distinctio eaque alias 
-                    deserunt, repellendus minima laboriosam ducimus adipisci corporis id odio tempore animi dolorem modi quasi tempora consequuntur! 
-                    Asperiores illo temporibus laborum odio, ullam, modi autem ab iusto perferendis nemo ex esse, itaque libero vero deserunt maxime nihil. 
-                    Suscipit iure aperiam vero accusantium deleniti nihil accusamus autem temporibus voluptate cumque quis eos a praesentium modi nostrum 
-                    minus, possimus hic perferendis dolorum inventore sed dolores non. Incidunt minus voluptatum, a laborum neque in dolorum at assumenda 
-                    molestias eaque nisi, odit eligendi accusantium tempora provident quo. Tempora quis, omnis quam qui aspernatur non alias? In odit non 
-                    accusamus enim doloribus harum expedita voluptatem ut voluptatum, officiis repellat. Labore, ab non odio, perferendis ut vitae pariatur 
-                    consequatur ipsum perspiciatis dolore, cupiditate ipsam laudantium quia ad eaque corporis recusandae officiis autem quasi commodi! Atque 
-                    perspiciatis magni reprehenderit, deserunt porro ad pariatur, nemo asperiores error totam necessitatibus quidem architecto tempora saepe 
-                    id libero alias ut vero ducimus in cupiditate, sapiente nostrum rem corrupti. Debitis, aspernatur nesciunt. Expedita praesentium nemo alias 
-                    possimus, quos assumenda eaque earum maxime. Quos non aspernatur omnis et quasi vitae exercitationem saepe ipsa officia officiis magnam 
-                    vero fugit accusantium, ab delectus ex animi deserunt nesciunt veniam esse incidunt rerum magni! Hic provident quam blanditiis autem esse 
-                    adipisci illo veniam similique et. Eum sit eius perspiciatis accusantium voluptate illo reiciendis quasi nihil ipsum a, temporibus dolorum 
-                    laudantium repudiandae veritatis vero animi commodi deserunt qui consequatur molestias ut enim numquam optio itaque. Nam natus, voluptatum 
-                    corrupti accusamus minus esse nihil? Officia.
-                </p>
-            </article>
-        </div>
+<script setup>
+onMounted(() => {
+    let hiddenItems = document.querySelectorAll(".fade-out");
+    hiddenItems.forEach((x) => {
+        x.classList.toggle("fade-out", false);
+    })
+});
+</script>
+<template lang="pug">
+.body
+    .jumbo
+        .grid_2x2.vh.mobile 
+            .top.left 
+                .grid_2x2.stretch
+                    .bottom.span.flex.inline.columns.pad_2xX.flex_end_align
+                        h1.text_reset Hi! My name is Gerard.
+                        h2.text_reset I also go by "Jagofr".
+            .top.right
+                .flex.inline.columns.stretch.pad_2x.flex_end_justify.flex_gap_sm
+                    h3 Who am I?
+                    p 
+                        | I'm Gerard Francis, or Jamie if you feel more endearing. I am a freelance,
+                        | full-stack web/mobile/app developer, who (at least right now) focuses on cross-platform,
+                        | mobile-first websites and web applications. I typically use some JavaScript stack of sorts.
+                        | Currently, I'm using Nuxt.js to develop this Website as a Jamstack/SSG (or simply static)
+                        | webpage! But I also use PHP for my company site, 
+                        a(href="http://www.avato.media/") AVATO Media
+                        |.
+            .bottom.left
+                .flex.inline.columns.stretch.pad_2x.text__align_center.flex_gap_lg
+                    h3 This site's status...
+                    p.text__align_justify   
+                        | Right now, if I haven't updated this yet again, this page may just be a basic layout. But I'm still working
+                        | on it! I moved all the lorems to the 
+                        NuxtLink(to="/tests") tests page
+                        |  so that the actual pages can get some room to breathe! Hope you like how it is so far though; and please feel
+                        | free to use that 
+                        a(href="https://github.com/Jagofr/jagofr.github.io/") GitHub link
+                        |  up there to check out the source code for this site! Have fun!
+            .bottom.right
+                .flex.inline.columns.stretch.pad_2x.flex_gap_lg
+                    h3.text__align_left.pad_smX Latest Blog Articles 
+                    .grid_2x2.stretch 
+                        a(href="/blog").btn-link.top.left.flex.inline.flex_center Blog Post 1
+                        a(href="/blog/test").btn-link.top.right.flex.inline.flex_center Blog Post 2
+                        a(href="/blog").btn-link.bottom.left.flex.inline.flex_center Blog Post 3
+                        a(href="/blog/test").btn-link.bottom.right.flex.inline.flex_center Blog Post 4
+
+
 </template>
+<style lang="less">
+
+</style>

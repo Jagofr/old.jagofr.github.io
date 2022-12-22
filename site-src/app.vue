@@ -1,6 +1,7 @@
 <style>
-@import url(https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css);
 
 
 *, *:before, *:after {
@@ -9,17 +10,15 @@
 * {
   margin: 0;
   padding: 0;
+  transition: all 200ms ease-in-out, transform 650ms ease-in-out;
 }
 [hidden] {
   display: none !important;
 }
 
 #app{
-  min-height: 98vh;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
+  min-height: 100vh;
+  display: block;
 }
 </style>
 
@@ -28,3 +27,17 @@
     <NuxtLayout />
   </div>
 </template>
+
+<script setup>
+useHead({
+  meta: [{
+    name: 'viewport',
+    content: "width=device-width, initial-scale=1.0"
+  }, {
+    charset: "utf-8"
+  }, {
+    "http-equiv": "x-ua-compatible",
+    content: "IE=edge"
+  }]
+});
+</script>

@@ -1,0 +1,121 @@
+@import "~/assets/jCss/partials/_jCssVars";
+
+.nav- {
+    &bar {
+        display: flex;
+        position: sticky;
+        top: 0;
+        width: @vw;
+        min-height: @navY;
+        background: linear-gradient(to top, @light-500, @light-700);
+        z-index: 9999;
+
+        &__{
+            &menu-btn {
+                padding: @pad-sm;
+                background: none;
+                border: none;
+                &:hover {
+                    background: linear-gradient(to top, @dark-700, @dark-100);
+                    color: @light-700;
+                    cursor: pointer;
+                }
+                &-icon {
+                    font-size: @txt-lg;
+                }
+            }
+
+            &header {
+                display: block;
+                height: @navY;
+
+                &_text {
+                    font-size: @txt-lg;
+                    height: 100%;
+                    display: block;
+                }
+            }
+            
+            &social-links {
+                display: flex;
+                width: 100%;
+                justify-content: flex-end;
+            }
+
+            &links {
+                &.hidden {
+                    transform: translateX(-150%);
+                }
+                transform: translateY(0%);
+                display: flex;
+                flex-flow: column nowrap;
+                position: absolute;
+                top: @navY;
+                background-color: @dark-700;
+                color: @light-500;
+                width: @vw;
+                z-index: 999;
+                
+                .nav-bar__link {
+                    height: @navY;
+                    width: 100%;
+                    &:hover {
+                        background-color: @light-700;
+                        color: @dark-500;
+                        cursor: pointer;
+                    }
+                }
+            }
+            &link {
+                display: inline-flex;
+                justify-content: flex-start;
+                align-items: center;
+                height: 100%;
+                padding: 0 @pad-md;
+                text-decoration: none;
+                color: inherit;
+
+                &:hover {
+                    text-decoration: underline;
+                    background-color: @dark-100;
+                    color: @light-700;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .nav- {
+        &bar {
+            padding: 0 @desktop-navPad;
+            &__ {
+                &menu-btn {
+                    display: none;
+                }
+                &social-links {
+                    width: max-content;
+                }
+                &link {
+                    &:hover {
+                        background-color: @dark-100 !important;
+                        color: @light-700 !important;
+                    }
+                }
+                &links {
+                    &.hidden {
+                        transform: translate(0);
+                    }
+                    transform: translate(0);
+                    position: static;
+                    flex-flow: row nowrap;
+                    background: linear-gradient(to top, @light-500, @light-700);
+                    color: @dark-500;
+                    width: 100%;
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+}
