@@ -3,7 +3,7 @@
     <div class="content-body">
         <LazyNuxtPage />
     </div>
-    <FooterComponent />
+    <!--FooterComponent /-->
 </template>
 
 <style lang="less">

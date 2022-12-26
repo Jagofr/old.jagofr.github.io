@@ -5,16 +5,16 @@
         display: flex;
         position: sticky;
         top: 0;
-        width: @vw;
-        min-height: @navY;
+        min-height: @navY-mobile;
         background: linear-gradient(to top, @light-500, @light-700);
         z-index: 9999;
 
         &__{
             &menu-btn {
-                padding: @pad-sm;
+                padding: @pad-sm @pad-md;
                 background: none;
                 border: none;
+                height: 100%;
                 &:hover {
                     background: linear-gradient(to top, @dark-700, @dark-100);
                     color: @light-700;
@@ -23,11 +23,13 @@
                 &-icon {
                     font-size: @txt-lg;
                 }
+                &-box {
+                }
             }
 
             &header {
                 display: block;
-                height: @navY;
+                height: @navY-mobile;
 
                 &_text {
                     font-size: @txt-lg;
@@ -38,8 +40,12 @@
             
             &social-links {
                 display: flex;
-                width: 100%;
-                justify-content: flex-end;
+                margin-left: auto;
+                @media only screen and (max-width: 281px) {
+                    .nav-bar__links_item:nth-of-type(2), .nav-bar__links_item:nth-of-type(1) {
+                        display: none !important;
+                    }
+                }
             }
 
             &links {
@@ -50,7 +56,7 @@
                 display: flex;
                 flex-flow: column nowrap;
                 position: absolute;
-                top: @navY;
+                top: calc(@navY * 2);
                 background-color: @dark-700;
                 color: @light-500;
                 width: @vw;
@@ -90,12 +96,16 @@
     .nav- {
         &bar {
             padding: 0 @desktop-navPad;
+            min-height: @navY;
             &__ {
                 &menu-btn {
                     display: none;
                 }
                 &social-links {
                     width: max-content;
+                }
+                &header {
+                    height: calc(@navY);
                 }
                 &link {
                     &:hover {

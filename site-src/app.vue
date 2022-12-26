@@ -10,6 +10,8 @@
 * {
   margin: 0;
   padding: 0;
+}
+body > div * {
   transition: all 200ms ease-in-out, transform 650ms ease-in-out;
 }
 [hidden] {
