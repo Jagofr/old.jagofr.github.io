@@ -4,6 +4,6 @@ export default defineNuxtConfig({
       '@nuxt/content'
     ],
     experimental: {
-      payloadExtraction: true
+      payloadExtraction: false
     }
   });

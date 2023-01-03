@@ -56,7 +56,7 @@ onMounted(() => {
 <style lang="less">
 @import "~/assets/jCss/partials/_jCssVars.less";
 #personal-intro {
-    background-image: url("/jamie (13).jpg");
+    background-image: url("/img/jamie-13.jpg");
     background-size: 100%;
     background-position-y: 30%;
     color: @light-700;
