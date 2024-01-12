@@ -6,7 +6,7 @@
                                 So, if you got onto this site during this phase, it seems like you got here while I'm working on it!
                                 At the moment, I have like 50 million projects (3 sub-projects combined into 1 core project, along
                                 with a couple others) doing and really I'm quite overwhelmed. However! This is my portfolio website
-                                that's hosted happily on GitHub! If you really wanna see stuff I worked on, for now, you can just
+                                that's somewhat hosted on <a href="https://github.com/">Github</a> but comfortably hosted on <a href="https://freewha.com/">FreeWHA.com</a>! If you really wanna see stuff I worked on, for now, you can just
                                 visit my GitHub page here at <a href="https://github.com/Jagofr/">https://github.com/Jagofr/</a>.
                                 Have fun while here on this chaos of a site for now!
                         </p>

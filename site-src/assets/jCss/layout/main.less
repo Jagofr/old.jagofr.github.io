@@ -9,30 +9,40 @@ a.btn-link {
     }
 }
 
+/* Text Modifiers */
+
 .text { 
     &_ {
+        /* Resets Text Alignment */
         &reset {
             text-align: left;
         }
     }
     &__ {
+        /* Text Alignment */
         &align_ {
+            /* Right Align */
             &right {
                 text-align: right;
             }
+            /* Left Align */
             &left {
                 text-align: left;
             }
+            /* Center Align */
             &center {
                 text-align: center;
+                /* Center Align for Mobile Screens Only */
                 @media only screen and (max-width: 900px) {
                     &_mobileOnly {
                         text-align: center;
                     }
                 }
             }
+            /* Justify Align */
             &justify {
                 text-align: justify;
+                /* Justify Align for Mobile Screens Only */
                 @media only screen and (max-width: 900px) {
                     &_mobileOnly {
                         text-align: justify;
@@ -42,6 +52,8 @@ a.btn-link {
         }
     }
 }    
+
+/* Padding Helpers */
 .pad {
     &_ {
         &sm {
@@ -98,6 +110,10 @@ a.btn-link {
     }
 }
 
+/* Jumbotron Element
+ * - Sets as block, fills width of viewport, removes padding for itself. 
+ * - Only works within a .body container element.
+ */
 .body { 
     .jumbo {
         display: block;
@@ -106,67 +122,72 @@ a.btn-link {
     }
 }
 
+/* Grid Element
+ * - Sets as a grid-block
+ */
 .grid {
     &_ {
+        /* 2 x 2 Block Grid */
         &2x2 {
             display: grid;
             grid-template-rows: repeat(2, minmax(0, 1fr));
             grid-template-columns: repeat(2, minmax(0, 1fr));
+            /* Sets height of grid to fill the viewport */
             &.vh {
                 width: 100%;
                 min-height: @bodyY;
             }
-
+            /* Top Cell Row of Grid */
             .top {
                 grid-row: 1 / 2;
             }
+            /* Left Cell Column of Grid */
             .left {
                 grid-column: 1 / 2;
             }
+            /* Bottom Cell Row of Grid */
             .bottom {
                 grid-row: 2 / 3;
             }
+            /* Right Cell Column of Grid */
             .right {
                 grid-column: 2 / 3;
             }
+            /* Fill Top Cell Row of Grid */
             .top.span {
                 grid-row: 1 / 2;
                 grid-column: 1 / span 2;
             }
+            /* Fill Bottom Cell Row of Grid */
             .bottom.span {
                 grid-row: 2 / 3;
                 grid-column: 1 / span 2;
             }
+            /* Fill Left Cell Column of Grid */
             .left.span {
                 grid-column: 1 / 2;
                 grid-row: 1 / span 2;
             }
+            /* Fill Right Cell Column of Grid */
             .right.span {
                 grid-column: 2 / 3;
                 grid-row: 1 / span 2;
             }
+            /* Stretch Cell Container to Fill Grid */
             .stretch {
                 height: 100%;
             }
         }
     }
 }
-@media only screen and (max-width: 899px) {
-    .mobile.grid {
-        &_ {
-            &2x2 {
-                display: block;
-                min-height: @vh;
-                div {
-                    min-height: 40vh;
-                }
-            }
-        }
-    }
-}
+/* Flex Blox Container Element
+ * Sets container to flexbox block.
+ */
 .flex {
     display: flex;
+    /* Flexbox Modifiers */
     &_ {
+        /* Flexbox Alignment & Spacing Modifiers */
         &start {
             &_justify {
                 @media only screen and (max-width: 900px) {
@@ -219,6 +240,20 @@ a.btn-link {
         }
         &Y {
             height: 100%;
+        }
+    }
+}
+/* Mobile Media Queries */
+@media only screen and (max-width: 899px) {
+    .mobile.grid {
+        &_ {
+            &2x2 {
+                display: block;
+                min-height: @vh;
+                div {
+                    min-height: 40vh;
+                }
+            }
         }
     }
 }

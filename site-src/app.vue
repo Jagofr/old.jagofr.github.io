@@ -12,6 +12,7 @@
   padding: 0;
 }
 body > div * {
+  font-family: sans-serif;
   transition: all 200ms ease-in-out, transform 650ms ease-in-out;
 }
 [hidden] {

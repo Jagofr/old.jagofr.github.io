@@ -46,10 +46,10 @@ onMounted(() => {
                 .flex.inline.columns.stretch.pad_2x.flex_gap_lg
                     h3.text__align_left.pad_smX Latest Blog Articles 
                     .grid_2x2.stretch 
-                        a(href="/blog").btn-link.top.left.flex.inline.flex_center Blog Post 1
-                        a(href="/blog/test").btn-link.top.right.flex.inline.flex_center Blog Post 2
+                        a(href="/blog/test").btn-link.top.left.flex.inline.flex_center Blog Post 1
+                        a(href="/blog/vuedoc").btn-link.top.right.flex.inline.flex_center Blog Post 2
                         a(href="/blog").btn-link.bottom.left.flex.inline.flex_center Blog Post 3
-                        a(href="/blog/test").btn-link.bottom.right.flex.inline.flex_center Blog Post 4
+                        a(href="/blog").btn-link.bottom.right.flex.inline.flex_center Blog Post 4
 
 
 </template>
